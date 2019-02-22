@@ -18,20 +18,22 @@ public class Start {
 
     @EventListener(ApplicationReadyEvent.class)
     public void runExample() {
-        Car car1 = new Car("Volvo", "XC90", Color.SILVER);
-        carRepo.save(car1);
+//        Car car1 = new Car("Volvo", "XC90", Color.SILVER);
+//        carRepo.save(car1);
+//
+//        Car car2 = new Car("Audi", "Q7", Color.WHITE);
+//        carRepo.save(car2);
+//
+//        Car car3 = new Car("BMW", "X5", Color.BLACK);
+//        carRepo.save(car3);
+//
+//        Car car4 = new Car("Toyota", "RAW", Color.RED);
+//        carRepo.save(car4);
 
-        Car car2 = new Car("Audi", "Q7", Color.WHITE);
-        carRepo.save(car2);
+//        carRepo.deleteById(1L);
 
-        Car car3 = new Car("BMW", "X5", Color.BLACK);
-        carRepo.save(car3);
-
-        Car car4 = new Car("TOYOTA", "RAW", Color.RED);
-        carRepo.save(car4);
-
-//        Iterable<Car> all = carRepo.findAll();
-//        all.forEach(System.out::println);
+        Iterable<Car> all = carRepo.findAllByColor(Color.BLACK);
+        all.forEach(System.out::println);
 
     }
 
