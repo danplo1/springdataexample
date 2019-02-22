@@ -1,11 +1,9 @@
 package pl.danplo.springdataexample;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name="MyCar")
 public class Car {
 
     @Id
@@ -13,7 +11,12 @@ public class Car {
     private Long id;
 
     private String mark;
+
+    @Transient //nie zapisuje danego pola do bazy danych, pomija go
     private String model;
+
+    @Enumerated(EnumType.STRING) //ORDINAL strategia domyślna, na podstawie kolejności w enumie zapisuje wartość do kolumny
+    //STRING - dane zapisane jako string
     private Color color;
 
 

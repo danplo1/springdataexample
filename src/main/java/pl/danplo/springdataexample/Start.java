@@ -18,11 +18,20 @@ public class Start {
 
     @EventListener(ApplicationReadyEvent.class)
     public void runExample() {
-//        Car car = new Car("Volvo", "XC90", Color.BLACK);
-//        carRepo.save(car);
+        Car car1 = new Car("Volvo", "XC90", Color.SILVER);
+        carRepo.save(car1);
 
-            Iterable<Car> all =  carRepo.findAll();
-            all.forEach(System.out::println);
+        Car car2 = new Car("Audi", "Q7", Color.WHITE);
+        carRepo.save(car2);
+
+        Car car3 = new Car("BMW", "X5", Color.BLACK);
+        carRepo.save(car3);
+
+        Car car4 = new Car("TOYOTA", "RAW", Color.RED);
+        carRepo.save(car4);
+
+//        Iterable<Car> all = carRepo.findAll();
+//        all.forEach(System.out::println);
 
     }
 
